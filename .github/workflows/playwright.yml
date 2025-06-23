@@ -7,7 +7,7 @@ on:
     branches: [ main, master ]
 
 env:  # Global environment variables
-  HEADLESS: false
+  HEADLESS: true
   HOME_PAGE_URL: "https://www.clinique.com/"
   SU_SI_PAGE_URL: "https://www.clinique.com/account/profile_preferences.tmpl"
   DASHBOARD_PAGE_URL: "https://www.clinique.com/account/index.tmpl"
