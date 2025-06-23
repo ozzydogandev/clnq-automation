@@ -1,0 +1,25 @@
+{
+  "name": "clnq-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npx cucumber-js",
+    "test:tag": "npx cucumber-js --tags @removefromcart",
+    "test:smoke": "npx cucumber-js --tags @smoke",
+    "Mac-open:report": "open reports/cucumber-report.html",
+    "Windows-open:report": "start reports/cucumber-report.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^24.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}

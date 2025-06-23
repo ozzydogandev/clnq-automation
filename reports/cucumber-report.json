@@ -1,0 +1,170 @@
+[
+  {
+    "description": "    As a user,\n    I want to remove a product from my cart\n    So that I can adjust my purchase before checking out.",
+    "elements": [
+      {
+        "description": "",
+        "id": "remove-from-cart---frontend-validation;successfully-removing-a-product-updates-the-ui",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Successfully removing a product updates the UI",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1015897958
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "the user is on the homepage",
+            "match": {
+              "location": "file:/Users/oguzhandogan/Github%20Ozzy/clnq-automation/steps/home-page/newTabSubmenu.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2989241082
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "user scrolls to the product and clicks the \"Add To Bag\" button",
+            "match": {
+              "location": "file:/Users/oguzhandogan/Github%20Ozzy/clnq-automation/steps/cart-tests/addToCartBE.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4298699499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "added product should be visible in the my bag component",
+            "match": {
+              "location": "file:/Users/oguzhandogan/Github%20Ozzy/clnq-automation/steps/cart-tests/addToCart.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3879900625
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "user closes the my bag component",
+            "match": {
+              "location": "file:/Users/oguzhandogan/Github%20Ozzy/clnq-automation/steps/cart-tests/addToCart.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 47237375
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "the cart icon should show an updated item count",
+            "match": {
+              "location": "file:/Users/oguzhandogan/Github%20Ozzy/clnq-automation/steps/cart-tests/addToCart.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7006310083
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "the user navigates to the cart page",
+            "match": {
+              "location": "file:/Users/oguzhandogan/Github%20Ozzy/clnq-automation/steps/cart-tests/addToCart.js:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8766941250
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the user removes the product from the cart",
+            "match": {
+              "location": "file:/Users/oguzhandogan/Github%20Ozzy/clnq-automation/steps/cart-tests/removeFromCart.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 268541790
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the item should no longer be visible in the cart",
+            "match": {
+              "location": "file:/Users/oguzhandogan/Github%20Ozzy/clnq-automation/steps/cart-tests/removeFromCart.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3882125708
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 259736499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 1
+          },
+          {
+            "name": "@fe",
+            "line": 1
+          },
+          {
+            "name": "@removefromcart",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "remove-from-cart---frontend-validation",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Remove from Cart - Frontend Validation",
+    "tags": [
+      {
+        "name": "@cart",
+        "line": 1
+      },
+      {
+        "name": "@fe",
+        "line": 1
+      },
+      {
+        "name": "@removefromcart",
+        "line": 1
+      }
+    ],
+    "uri": "features/cart-tests/remove_from_cart.feature"
+  }
+]
