@@ -1,27 +1,67 @@
 name: Playwright Tests
+
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
+env:  # Global environment variables
+  HOME_PAGE_URL: "https://www.clinique.com/"
+  SU_SI_PAGE_URL: "https://www.clinique.com/account/profile_preferences.tmpl"
+  DASHBOARD_PAGE_URL: "https://www.clinique.com/account/index.tmpl"
+  CART_PAGE_URL: "https://www.clinique.com/checkout/viewcart.tmpl"
+  VALID_EMAIL: "clnqqa+1@gmail.com"
+  VALID_PASSWORD: "OzzyQA123!"
+
 jobs:
-  test:
-    timeout-minutes: 60
+
+  signin-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install
+      - name: Run Login Tests
+        run: npx cucumber-js --tags @signin
+
+  cart-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install
+      - name: Run Cart Tests
+        run: npx cucumber-js --tags @cart
+
+  homepage-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install
+      - name: Run Dashboard Tests
+        run: npx cucumber-js --tags @homepage
+
+  upload-report:
+    if: ${{ !cancelled() }}
+    needs: [login-tests, cart-tests, dashboard-tests]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
