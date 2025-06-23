@@ -11,7 +11,7 @@ export class BasePage {
   }
 
   async start() {
-    await this.page.goto(process.env.HOME_PAGE_URL, { waitUntil: "load" });
+    await this.page.goto(process.env.HOME_PAGE_URL);
 
     await BrowserUtility.verify_title(
       this.page,
@@ -20,13 +20,13 @@ export class BasePage {
   }
 
   async goToSignInPage() {
-    await this.page.goto(process.env.SU_SI_PAGE_URL, { waitUntil: "load" });
+    await this.page.goto(process.env.SU_SI_PAGE_URL);
 
     await BrowserUtility.verify_title(this.page, "Clinique");
   }
 
   async goToCartPage() {
-    await this.page.goto(process.env.CART_PAGE_URL, { waitUntil: "load" });
+    await this.page.goto(process.env.CART_PAGE_URL);
 
     await BrowserUtility.verify_title(this.page, "Clinique");
   }

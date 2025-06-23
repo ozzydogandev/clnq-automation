@@ -11,7 +11,7 @@ const DEFAULT_TIMEOUT = 30 * 1000; // 30 seconds
 
 class CustomWorld {
   async init() {
-    this.browser = await chromium.launch({ headless: true });
+    this.browser = await chromium.launch({ headless: false });
     this.context = await this.browser.newContext();
     this.page = await this.context.newPage();
 
