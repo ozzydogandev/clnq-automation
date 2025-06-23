@@ -54,14 +54,3 @@ jobs:
       - run: npx playwright install
       - name: Run Dashboard Tests
         run: npx cucumber-js --tags @homepage
-
-  upload-report:
-    if: ${{ !cancelled() }}
-    needs: [login-tests, cart-tests, dashboard-tests]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
